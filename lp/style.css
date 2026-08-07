@@ -2580,3 +2580,207 @@ h1, h2, h3,
 .fv__stats {
   margin-bottom: 0;
 }
+
+/* ==========================================================
+   v3.1 — PC見栄え + compare可読性 + features SP修正
+   ========================================================== */
+
+/* ===== compare__desc: 白背景カード内は暗色文字に修正 ===== */
+.solution-hero .compare__desc {
+  color: var(--ink) \!important;
+}
+
+/* ===== Features: SP レイアウト修正 ===== */
+/* SP: 番号 → タイトル → 箇条書き を縦積み */
+.features-detail__item-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.features-detail__item-num {
+  margin-bottom: 2px;
+}
+
+/* PC: 横並びに戻す */
+@media (min-width: 768px) {
+  .features-detail__item-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+/* ===== PC全体: max-width + 中央寄せ + 余白 ===== */
+@media (min-width: 1024px) {
+  /* 全セクション内コンテンツ幅を制限 */
+  .fv__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .context__inner {
+    max-width: 680px;
+  }
+
+  .pain,
+  .features-detail,
+  .objection,
+  .faq,
+  .final-cta {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .solution-hero {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .cases .section-header {
+    padding: 0 80px;
+  }
+
+  .cases__scroll {
+    padding: 0 80px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  /* Pain: 3カード横並び + 中央寄せ */
+  .pain__cards {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .pain__visual {
+    max-width: 560px;
+  }
+
+  /* Solution: 中央寄せ */
+  .solution-hero .section-header,
+  .solution-hero__price-wrap,
+  .solution-hero__copy {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .compare {
+    max-width: 560px;
+  }
+
+  /* Features: カード幅 */
+  .features-detail__items {
+    max-width: 880px;
+  }
+
+  .features-detail__item-img {
+    flex: 0 0 320px;
+  }
+
+  /* Objection: 中央寄せ */
+  .objection__doubt {
+    max-width: 560px;
+  }
+
+  /* FAQ: 中央寄せ */
+  .faq__list {
+    max-width: 720px;
+  }
+
+  /* Form: 中央寄せ */
+  .form {
+    max-width: 440px;
+  }
+
+  /* FV: PCレイアウト */
+  .fv {
+    padding: 48px 80px 64px;
+  }
+
+  .fv__inner {
+    flex-direction: row;
+    gap: 56px;
+    text-align: left;
+    align-items: center;
+  }
+
+  .fv__content {
+    flex: 1;
+  }
+
+  .fv__content .fv__stats {
+    justify-content: flex-start;
+  }
+
+  .fv__mock {
+    flex: 0 0 400px;
+    max-width: 400px;
+    margin-top: 0;
+  }
+
+  .mock-laptop {
+    max-width: 400px;
+  }
+
+  .mock-laptop__app {
+    min-height: 180px;
+  }
+
+  /* Mid CTA: 横並び */
+  .mid-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 24px 80px;
+  }
+
+  .mid-cta__text {
+    margin-bottom: 0;
+  }
+
+  /* Tags */
+  .features-detail__tags {
+    max-width: 640px;
+  }
+
+  /* Context points: 横並び */
+  .context__points-list {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .context__point {
+    flex: 1;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .context__point-rank {
+    width: auto;
+    font-size: 28px;
+  }
+}
+
+/* ===== PC: Cases 4カード 2x2 ===== */
+@media (min-width: 1024px) {
+  .cases__scroll > .case {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+
+/* ===== セクション見出し: PC時の余白微調整 ===== */
+@media (min-width: 1024px) {
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .section-header__title {
+    font-size: 2rem;
+  }
+}

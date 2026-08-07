@@ -2001,16 +2001,16 @@ h1, h2, h3,
 /* ===== 4. Diagonal clip ===== */
 .section--clipped {
   clip-path: polygon(0 3vw, 100% 0, 100% calc(100% - 3vw), 0 100%);
-  padding-top: calc(var(--section-gap) + 3vw) \!important;
-  padding-bottom: calc(var(--section-gap) + 3vw) \!important;
+  padding-top: calc(var(--section-gap) + 3vw) !important;
+  padding-bottom: calc(var(--section-gap) + 3vw) !important;
   margin-top: -3vw; margin-bottom: -3vw;
   position: relative; z-index: 1;
 }
 @media (max-width: 767px) {
   .section--clipped {
     clip-path: polygon(0 1.5vw, 100% 0, 100% calc(100% - 1.5vw), 0 100%);
-    padding-top: calc(var(--section-gap) + 1.5vw) \!important;
-    padding-bottom: calc(var(--section-gap) + 1.5vw) \!important;
+    padding-top: calc(var(--section-gap) + 1.5vw) !important;
+    padding-bottom: calc(var(--section-gap) + 1.5vw) !important;
     margin-top: -1.5vw; margin-bottom: -1.5vw;
   }
 }
@@ -2224,8 +2224,8 @@ h1, h2, h3,
   text-align: center; color: #fff; position: relative;
 }
 .solution-hero .section-header__en { color: rgba(255,255,255,0.3); }
-.solution-hero .section-header__title { color: #fff \!important; }
-.solution-hero .section-header__title::after { background: var(--orange-500) \!important; }
+.solution-hero .section-header__title { color: #fff !important; }
+.solution-hero .section-header__title::after { background: var(--orange-500) !important; }
 .solution-hero__price { display: flex; align-items: baseline; justify-content: center; gap: 4px; margin-bottom: 16px; }
 .solution-hero__price-label { font-size: var(--font-sm); font-weight: 700; color: rgba(255,255,255,0.5); }
 .solution-hero__price-num { font-family: var(--ff-en); font-size: clamp(3rem, 12vw, 5rem); font-weight: 600; color: var(--orange-500); line-height: 1; }
@@ -2381,7 +2381,7 @@ h1, h2, h3,
 .sticky-cta__main { color: #fff; font-family: var(--ff-heading); }
 
 /* ===== 25. A11y ===== */
-@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms \!important; transition-duration: 0.01ms \!important; } }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
 .section--dark :focus-visible { outline: 2px solid var(--orange-500); outline-offset: 2px; }
 
 /* ==========================================================
@@ -2421,9 +2421,9 @@ h1, h2, h3,
 
 .mock-laptop__url {
   margin-left: 8px;
-  font-size: 9px \!important;
-  color: var(--text-muted) \!important;
-  letter-spacing: 0.05em \!important;
+  font-size: 9px !important;
+  color: var(--text-muted) !important;
+  letter-spacing: 0.05em !important;
 }
 
 .mock-laptop__app {
@@ -2534,7 +2534,7 @@ h1, h2, h3,
   position: absolute;
   top: -1.4em;
   left: 0;
-  font-size: 11px \!important;
+  font-size: 11px !important;
   pointer-events: none;
 }
 
@@ -2590,7 +2590,7 @@ h1, h2, h3,
 
 /* ===== compare__desc: 白背景カード内は暗色文字に修正 ===== */
 .solution-hero .compare__desc {
-  color: var(--ink) \!important;
+  color: var(--ink) !important;
 }
 
 /* ===== Features: SP レイアウト修正 ===== */
@@ -2796,13 +2796,27 @@ h1, h2, h3,
 .fv__stat-label-top {
   display: block;
   font-size: var(--font-xs);
-  font-weight: 500;
-  color: rgba(255,255,255,0.5);
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
   margin-bottom: 2px;
+  letter-spacing: 0.05em;
 }
 
-/* compare__desc: 最終上書き（全箇所） */
+/* FV stats: label-bottom も視認性アップ */
+.fv__stat-label {
+  color: rgba(255,255,255,0.7);
+  font-weight: 700;
+}
+
+/* PC版FV: stats配置 */
+@media (min-width: 768px) {
+  .fv__stats {
+    justify-content: flex-start;
+  }
+}
+
+/* compare__desc: ハードコード色で確実に上書き */
 .compare__before .compare__desc,
 .compare__after .compare__desc {
-  color: var(--ink) \!important;
+  color: #23282F;
 }

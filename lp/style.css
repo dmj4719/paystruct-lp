@@ -2538,13 +2538,16 @@ h1, h2, h3,
   pointer-events: none;
 }
 
-/* Solution: 全テキスト白化 */
+/* Solution: 全テキスト白化（compare__descはカード内なので除外） */
 .solution-hero,
 .solution-hero .section-header__title,
 .solution-hero .solution-hero__title,
-.solution-hero .solution-hero__copy,
-.solution-hero .compare__desc {
+.solution-hero .solution-hero__copy {
   color: #fff;
+}
+
+.solution-hero .compare__desc {
+  color: var(--ink);
 }
 
 /* ===== Features: 透かし数字SP非表示 ===== */

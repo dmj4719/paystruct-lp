@@ -2787,3 +2787,22 @@ h1, h2, h3,
     font-size: 2rem;
   }
 }
+
+/* ==========================================================
+   v3.2 — FV変更 + compare__desc最終修正
+   ========================================================== */
+
+/* FV stats: label-top（「最短」「月額」を数字の上に） */
+.fv__stat-label-top {
+  display: block;
+  font-size: var(--font-xs);
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 2px;
+}
+
+/* compare__desc: 最終上書き（全箇所） */
+.compare__before .compare__desc,
+.compare__after .compare__desc {
+  color: var(--ink) \!important;
+}

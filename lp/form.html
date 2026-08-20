@@ -50,5 +50,32 @@
 
   <footer class="footer"><p class="footer__company">株式会社PayStruct</p><p class="footer__copy">&copy; 2026 株式会社PayStruct</p></footer>
 
+  <script>
+  /* URLパラメータを保持・引き継ぎ */
+  (function(){
+    var qs = location.search;
+    var params = new URLSearchParams(qs);
+
+    /* パラメータをhidden fieldとしてフォームに追加（EmailJS送信時に含める用） */
+    var form = document.getElementById('contact-form');
+    if (form) {
+      params.forEach(function(val, key){
+        var hidden = document.createElement('input');
+        hidden.type = 'hidden';
+        hidden.name = key;
+        hidden.value = val;
+        form.appendChild(hidden);
+      });
+
+      /* フォーム送信時にthanks.htmlへパラメータ付きで遷移 */
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        /* TODO: ここにEmailJS送信処理を追加 */
+        window.location.href = 'thanks.html' + (qs || '');
+      });
+    }
+  })();
+  </script>
+
 </body>
 </html>

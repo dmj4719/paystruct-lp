@@ -348,6 +348,15 @@
   <script>
   (function(){var t=document.querySelectorAll('.fade-in');if(!t.length)return;var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');o.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});t.forEach(function(e){o.observe(e)})})();
   (function(){var s=document.getElementById('sticky-cta'),c=document.getElementById('cta');if(!s||!c)return;var o=new IntersectionObserver(function(e){s.classList.toggle('is-hidden',e[0].isIntersecting)},{threshold:0});o.observe(c)})();
+
+  /* URLパラメータをform.htmlへのリンクに引き継ぐ */
+  (function(){
+    var qs = location.search;
+    if (!qs) return;
+    document.querySelectorAll('a[href^="form.html"]').forEach(function(a){
+      a.href = 'form.html' + qs;
+    });
+  })();
   </script>
 </body>
 </html>

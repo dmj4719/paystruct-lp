@@ -2316,6 +2316,9 @@ h1, h2, h3,
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 .case__img { height: 110px; overflow: hidden; border-radius: var(--radius) var(--radius) 0 0; }
+@media (min-width: 768px) {
+  .case__img { height: 160px; }
+}
 .case__header { padding: 14px 16px 10px; border-bottom: 1px solid var(--border); }
 .case__industry { margin-bottom: 6px; }
 .case__title { font-size: var(--font-sm); font-weight: 900; color: var(--ink); line-height: 1.4; }
@@ -2733,10 +2736,10 @@ h1, h2, h3,
     min-height: 180px;
   }
 
-  /* Mid CTA: 横並び */
+  /* Mid CTA: PC時も縦並び維持 */
   .mid-cta {
-    flex-direction: row;
-    gap: 24px;
+    flex-direction: column;
+    gap: 10px;
     padding: 20px 80px;
     min-height: auto;
   }

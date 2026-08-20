@@ -77,13 +77,14 @@
         + String(now.getHours()).padStart(2,'0') + ':'
         + String(now.getMinutes()).padStart(2,'0');
 
+      var fd = new FormData(form);
       var templateParams = {
-        company:      form.company.value,
-        name:         form.name.value,
-        email:        form.email.value,
-        tel:          form.tel.value,
-        order_type:   form.order_type.value,
-        challenge:    form.challenge.value,
+        company:      fd.get('company'),
+        name:         fd.get('name'),
+        email:        fd.get('email'),
+        tel:          fd.get('tel'),
+        order_type:   fd.get('order_type'),
+        challenge:    fd.get('challenge'),
         utm_source:   params.get('utm_source')   || '',
         utm_medium:   params.get('utm_medium')    || '',
         utm_campaign: params.get('utm_campaign')  || '',

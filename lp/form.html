@@ -14,6 +14,9 @@
 
   <link rel="stylesheet" href="style.css?v=3.8">
 
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -51,29 +54,56 @@
   <footer class="footer"><p class="footer__company">株式会社PayStruct</p><p class="footer__copy">&copy; 2026 株式会社PayStruct</p></footer>
 
   <script>
-  /* URLパラメータを保持・引き継ぎ */
   (function(){
     var qs = location.search;
     var params = new URLSearchParams(qs);
 
-    /* パラメータをhidden fieldとしてフォームに追加（EmailJS送信時に含める用） */
-    var form = document.getElementById('contact-form');
-    if (form) {
-      params.forEach(function(val, key){
-        var hidden = document.createElement('input');
-        hidden.type = 'hidden';
-        hidden.name = key;
-        hidden.value = val;
-        form.appendChild(hidden);
-      });
+    emailjs.init('q7QRxOXj-OXeOJTYM');
 
-      /* フォーム送信時にthanks.htmlへパラメータ付きで遷移 */
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        /* TODO: ここにEmailJS送信処理を追加 */
-        window.location.href = 'thanks.html' + (qs || '');
-      });
-    }
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.querySelector('.btn__label').textContent = '送信中...';
+
+      var now = new Date();
+      var sentAt = now.getFullYear() + '/'
+        + String(now.getMonth()+1).padStart(2,'0') + '/'
+        + String(now.getDate()).padStart(2,'0') + ' '
+        + String(now.getHours()).padStart(2,'0') + ':'
+        + String(now.getMinutes()).padStart(2,'0');
+
+      var templateParams = {
+        company:      form.company.value,
+        name:         form.name.value,
+        email:        form.email.value,
+        tel:          form.tel.value,
+        order_type:   form.order_type.value,
+        challenge:    form.challenge.value,
+        utm_source:   params.get('utm_source')   || '',
+        utm_medium:   params.get('utm_medium')    || '',
+        utm_campaign: params.get('utm_campaign')  || '',
+        utm_content:  params.get('utm_content')   || '',
+        utm_term:     params.get('utm_term')      || '',
+        page_url:     location.href,
+        sent_at:      sentAt
+      };
+
+      emailjs.send('service_fsnv9sl', 'template_cdh6vv9', templateParams)
+        .then(function(){
+          window.location.href = 'thanks.html' + (qs || '');
+        })
+        .catch(function(err){
+          console.error('EmailJS Error:', err);
+          btn.disabled = false;
+          btn.querySelector('.btn__label').innerHTML = '無料で資料をダウンロード <span class="btn__arrow">→</span>';
+          alert('送信に失敗しました。時間を置いて再度お試しください。');
+        });
+    });
   })();
   </script>
 

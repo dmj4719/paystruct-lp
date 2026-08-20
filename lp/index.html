@@ -175,6 +175,7 @@
       <h2 class="section-header__title solution-hero__title">PayStructなら</h2>
     </div>
 
+    <p class="solution-hero__copy fade-in" style="font-size:var(--font-lg); font-weight:900; margin-bottom:8px;">1つのツールで</p>
     <div class="solution-hero__price-wrap">
       <span class="en-aside-inline en-label">MONTHLY PLAN</span>
       <div class="solution-hero__price fade-in">
@@ -183,7 +184,7 @@
         <span class="solution-hero__price-unit">円〜</span>
       </div>
     </div>
-    <p class="solution-hero__copy">一つのツールで<br><strong>資金繰りの解消と事務効率化を</strong></p>
+    <p class="solution-hero__copy"><strong>資金繰りの解消と事務効率化を</strong></p>
 
     <div class="compare fade-in">
       <div class="compare__side compare__before">
@@ -191,7 +192,11 @@
           <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80" alt="紙の請求書と電卓">
         </div>
         <span class="compare__label compare__label--before">Before</span>
-        <p class="compare__desc">支払い遅延・資金繰り不安<br>紙の帳票作業に追われる日々</p>
+        <ul class="compare__desc" style="list-style:disc; text-align:left; padding-left:1.2em;">
+          <li>支払い遅延</li>
+          <li>資金繰り不安</li>
+          <li>紙の帳票作業</li>
+        </ul>
       </div>
       <div class="compare__arrow">→</div>
       <div class="compare__side compare__after">
@@ -199,15 +204,23 @@
           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80" alt="デジタル管理画面">
         </div>
         <span class="compare__label compare__label--after">After</span>
-        <p class="compare__desc">先払いで資金化<br>帳票は自動作成<br>法改正にも標準対応</p>
+        <ul class="compare__desc" style="list-style:disc; text-align:left; padding-left:1.2em;">
+          <li>先払い資金化</li>
+          <li>帳票は自動作成</li>
+          <li>法にも標準対応</li>
+        </ul>
       </div>
     </div>
+
+    <p class="solution-hero__copy fade-in" style="margin-top:var(--inner-gap); font-size:var(--font-md); line-height:1.6;">
+      下請けが求めてる内容を満たし<br><strong>選ばれる元請けへ</strong>
+    </p>
   </section>
 
   <!-- ===== Mid CTA ===== -->
   <div class="mid-cta">
     <p class="mid-cta__text">＼ まずは資料で疑問を解決 ／</p>
-    <a href="#cta" class="btn btn--primary btn--arrow"><span class="btn__label">無料で資料を見てみる <span class="btn__arrow">→</span></span></a>
+    <a href="form.html" class="btn btn--primary btn--arrow"><span class="btn__label">無料で資料を見てみる <span class="btn__arrow">→</span></span></a>
   </div>
 
   <!-- ===== 【4】機能提示 ===== -->
@@ -306,7 +319,7 @@
   <!-- ===== Mid CTA 2 ===== -->
   <div class="mid-cta">
     <p class="mid-cta__text">＼ まずは資料で疑問を解決 ／</p>
-    <a href="#cta" class="btn btn--primary btn--arrow"><span class="btn__label">無料で資料を見てみる <span class="btn__arrow">→</span></span></a>
+    <a href="form.html" class="btn btn--primary btn--arrow"><span class="btn__label">無料で資料を見てみる <span class="btn__arrow">→</span></span></a>
   </div>
 
   <!-- ===== 【5】導入実績 ===== -->
@@ -345,22 +358,13 @@
       <p class="final-cta__lead">＼ たったの10秒 ／</p>
       <h2 class="final-cta__title">無料で資料を見てみる</h2>
     </div>
-
-    <form class="form" id="contact-form">
-      <div class="form__group"><label class="form__label">受注形態<span class="form__required">必須</span></label><div class="form__options"><label class="form__option"><input type="radio" name="order_type" value="元請けになることが多い" required><span>元請けになることが多い</span></label><label class="form__option"><input type="radio" name="order_type" value="下請けになることが多い"><span>下請けになることが多い</span></label></div></div>
-      <div class="form__group"><label class="form__label">現在の課題<span class="form__required">必須</span></label><select class="form__select" name="challenge" required><option value="" disabled selected>選択してください</option><option value="下請けへの支払いが遅れがち">下請けへの支払いが遅れがち</option><option value="見積〜請求のやり取りに時間がかかる">見積〜請求のやり取りに時間がかかる</option><option value="電帳法／インボイス対応ができていない">電帳法／インボイス対応ができていない</option><option value="下請けが他社に流れるのが不安">下請けが他社に流れるのが不安</option><option value="その他">その他</option></select></div>
-      <div class="form__group"><label class="form__label">会社名<span class="form__required">必須</span></label><input type="text" class="form__input" name="company" placeholder="株式会社〇〇建設" required></div>
-      <div class="form__group"><label class="form__label">お名前<span class="form__required">必須</span></label><input type="text" class="form__input" name="name" placeholder="山田 太郎" required></div>
-      <div class="form__group"><label class="form__label">メールアドレス<span class="form__required">必須</span></label><input type="email" class="form__input" name="email" placeholder="example@company.co.jp" required></div>
-      <div class="form__group"><label class="form__label">電話番号<span class="form__required">必須</span></label><input type="tel" class="form__input" name="tel" placeholder="090-1234-5678" required></div>
-      <button type="submit" class="btn btn--primary btn--full btn--arrow"><span class="btn__label">無料で資料をダウンロード <span class="btn__arrow">→</span></span></button>
-    </form>
+    <a href="form.html" class="btn btn--primary btn--full btn--arrow" style="max-width:380px; margin:0 auto;"><span class="btn__label">無料で資料をダウンロード <span class="btn__arrow">→</span></span></a>
   </section>
 
   <footer class="footer"><p class="footer__company">株式会社PayStruct</p><p class="footer__copy">&copy; 2026 株式会社PayStruct</p></footer>
 
   <div class="sticky-cta" id="sticky-cta">
-    <a href="#cta" class="sticky-cta__btn btn--arrow">
+    <a href="form.html" class="sticky-cta__btn btn--arrow">
       <span class="sticky-cta__sub">下請けに選ばれる元請けに</span>
       <span class="sticky-cta__main">無料で資料を見てみる <span class="btn__arrow">→</span></span>
     </a>
